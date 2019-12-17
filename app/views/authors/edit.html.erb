@@ -1,0 +1,25 @@
+<h2>Create an Author</h2>
+<%if @author.errors.any?%>
+    <h2>There were some errors.</h2>
+    <%@author.errors.full_messages.each do |error|%>
+    <li><%=error%></li>
+    <%end%>
+<%end%>
+<%= form_tag authors_path, method: "post" do %>
+  <div class="field">
+    <%= label_tag "name", "Name" %>
+    <%= text_field_tag "name", @author.name%>
+  </div>
+
+  <div class="field">
+    <%= label_tag "email", "Email" %>
+    <%= text_field_tag "email", @author.email %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "phone_number", "Phone Number" %>
+    <%= text_field_tag "phone_number", @author.phone_number %>
+  </div>
+
+  <%= submit_tag "Update Author" %>
+<% end %>

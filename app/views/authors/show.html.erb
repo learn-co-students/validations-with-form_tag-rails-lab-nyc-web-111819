@@ -1,2 +1,5 @@
 <h2><%= @author.name %></h2>
+<%= @author.phone_number %> <br>
 <a href="mailto:<%= @author.email %>"><%= @author.email %></a>
+
+<%= button_to "Edit", edit_author_path(@author), method: :get %>
